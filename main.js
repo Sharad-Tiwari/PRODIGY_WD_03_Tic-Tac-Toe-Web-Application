@@ -12,13 +12,10 @@ const bn1 = document.querySelector(".b1"),
 
 reset.addEventListener("click", () => {
   newGame();
-  errtxt.style.display = "none";
 } );
 let flag = 1, count = 1;
 
-window, addEventListener("load", () => {
-  errtxt.style.display = "none";
-})
+
 
 
 function newGame() {
@@ -32,7 +29,17 @@ function newGame() {
     bn8.innerHTML = "";
     bn9.innerHTML = "";
     count = 1;
-    flag = 1;
+  flag = 1;
+  errtxt.style.display = "none";
+  bn1.style.background = "transparent";
+  bn2.style.background = "transparent";
+  bn3.style.background = "transparent";
+  bn4.style.background = "transparent";
+  bn5.style.background = "transparent";
+  bn6.style.background = "transparent";
+  bn7.style.background = "transparent";
+  bn8.style.background = "transparent";
+  bn9.style.background = "transparent";
 }
 
 
@@ -209,46 +216,59 @@ let check = () => {
     if (b1 === b2 && b2 === b3 && b1 !== "") {
       errtxt.style.display = "block";
       errtxt.innerHTML = `Player ${b1} Won !!`;
-      newGame();
-      
+      bn1.style.background = "lightgreen";
+      bn2.style.background = "lightgreen";
+      bn3.style.background = "lightgreen";
     } else if (b4 === b5 && b5 === b6 && b4 !== "") {
       errtxt.style.display = "block";
       errtxt.innerHTML = `Player ${b4} Won !!`;
-      newGame();
-
+      bn4.style.background = "lightgreen";
+      bn5.style.background = "lightgreen";
+      bn6.style.background = "lightgreen";
       
     } else if (b7 === b8 && b8 === b9 && b7 !== "") {
       errtxt.style.display = "block";
       errtxt.innerHTML = `Player ${b7} Won !!`;
-      newGame();
-      
+      bn7.style.background = "lightgreen";
+      bn8.style.background = "lightgreen";
+      bn9.style.background = "lightgreen";
     } else if (b1 === b4 && b4 === b7 && b1 !== "") {
       errtxt.style.display = "block";
       errtxt.innerHTML = `Player ${b1} Won !!`;
-      newGame();
+      bn1.style.background = "lightgreen";
+      bn4.style.background = "lightgreen";
+      bn7.style.background = "lightgreen";
       
     } else if (b2 === b5 && b5 === b8 && b2 !== "") {
       errtxt.style.display = "block";
       errtxt.innerHTML = `Player ${b5} Won !!`;
-      newGame();
+      bn2.style.background = "lightgreen";
+      bn5.style.background = "lightgreen";
+      bn8.style.background = "lightgreen";
      
     } else if (b3 === b6 && b6 === b9 && b3 !== "") {
       errtxt.style.display = "block";
       errtxt.innerHTML = `Player ${b3} Won !!`;
-      newGame();
+      bn3.style.background = "lightgreen";
+      bn6.style.background = "lightgreen";
+      bn9.style.background = "lightgreen";
       
     } else if (b1 === b5 && b5 === b9 && !b1 !== "") {
       errtxt.style.display = "block";
       errtxt.innerHTML = `Player ${b1} Won !!`;
-      newGame();
+      bn1.style.background = "lightgreen";
+      bn5.style.background = "lightgreen";
+      bn9.style.background = "lightgreen";
       
     } else if (b3 === b5 && b5 === b7 && b3 !== "") {
       errtxt.style.display = "block";
       errtxt.innerHTML = `Player ${b3} Won !!`;
-      newGame();
+      bn7.style.background = "lightgreen";
+      bn5.style.background = "lightgreen";
+      bn3.style.background = "lightgreen";
       
     } else if (
-      count == 9 &&
+      count == 10 &&
       b1 !== "" &&
       b2 !== "" &&
       b3 !== "" &&
@@ -259,7 +279,10 @@ let check = () => {
       b8 !== "" &&
       b9 !== ""
     ) {
-      newGame();
+      errtxt.style.display = "block";
+      errtxt.innerHTML = `Match Tie!!`;
+    } else {
+
     }
   }
 };
